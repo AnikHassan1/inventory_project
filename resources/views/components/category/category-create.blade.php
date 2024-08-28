@@ -34,7 +34,7 @@
         else {
             document.getElementById('modal-close').click();
             showLoader();
-            let res = await axios.post("/create-category",{name:categoryName})
+            let res = await axios.post("/categoriesCreate",{name:categoryName})
             hideLoader();
             if(res.status===201){
                 successToast('Request completed');

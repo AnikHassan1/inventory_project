@@ -37,7 +37,7 @@ getList();
 
 async function getList() {
     showLoader();
-    let res=await axios.get("/list-customer");
+    let res=await axios.get("/customerList");
     hideLoader();
 
     let tableList=$("#tableList");
@@ -51,7 +51,7 @@ async function getList() {
                     <td>${index+1}</td>
                     <td>${item['name']}</td>
                     <td>${item['email']}</td>
-                    <td>${item['mobile']}</td>
+                    <td>${item['password']}</td>
                     <td>
                         <button data-id="${item['id']}" class="btn editBtn btn-sm btn-outline-success">Edit</button>
                         <button data-id="${item['id']}" class="btn deleteBtn btn-sm btn-outline-danger">Delete</button>

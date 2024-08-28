@@ -39,7 +39,7 @@ async function getList() {
 
 
     showLoader();
-    let res=await axios.get("/list-category");
+    let res=await axios.get("/categoryList");
     hideLoader();
 
     let tableList=$("#tableList");
@@ -60,19 +60,24 @@ async function getList() {
         tableList.append(row)
     })
 
-    $('.editBtn').on('click', async function () {
-           let id= $(this).data('id');
-           await FillUpUpdateForm(id)
-           $("#update-modal").modal('show');
+    // $('.editBtn').on('click', async function () {
+    //        let id= $(this).data('id');
+    //        await FillUpUpdateForm(id)
+    //        $("#update-modal").modal('show');
 
 
+    // })
+
+    $('.editBtn').on('click',function(){
+       let id = $(this).data('id');
+       alert(id);
     })
 
     $('.deleteBtn').on('click',function () {
         let id= $(this).data('id');
         $("#delete-modal").modal('show');
         $("#deleteID").val(id);
-    })
+    });
 
     new DataTable('#tableData',{
        order:[[0,'desc']],

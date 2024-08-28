@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\categoriesController;
+use App\Http\Controllers\customerController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\TokenVerificationMiddleware;
@@ -33,3 +35,17 @@ Route::get('/verifyOtp',[UserController::class,'VerifyOTPPage']);
 Route::get('/resetPassword',[UserController::class,'ResetPasswordPage'])->middleware([TokenVerificationMiddleware::class]);
 Route::get('/dashboard',[DashboardController::class,'DashboardPage'])->middleware([TokenVerificationMiddleware::class]);
 Route::get('/ProfilePage',[UserController::class,'ProfilePage'])->middleware([TokenVerificationMiddleware::class]);
+
+// pages Route
+Route::get('/categoryPage',[categoriesController::class,'CategoriesPage'])->middleware([TokenVerificationMiddleware::class]);
+Route::get('/categoryList',[categoriesController::class,'categoriesList'])->middleware([TokenVerificationMiddleware::class]);
+Route::post('/categoriesCreate',[categoriesController::class,'categoriesCreate'])->middleware([TokenVerificationMiddleware::class]);
+Route::post('/categoriesUpdate',[categoriesController::class,'categoriesUpdate'])->middleware([TokenVerificationMiddleware::class]);
+Route::post('/categoriesDelet',[categoriesController::class,'categoriesDelet'])->middleware([TokenVerificationMiddleware::class]);
+// customer Route
+Route::get('/customerPages',[customerController::class,'customerPages'])->middleware([TokenVerificationMiddleware::class]);
+Route::get('/customerList',[customerController::class,'customerList'])->middleware([TokenVerificationMiddleware::class]);
+Route::post('/customerCreate',[customerController::class,'customerCreate'])->middleware([TokenVerificationMiddleware::class]);
+Route::post('/customerupdate',[customerController::class,'customerupdate'])->middleware([TokenVerificationMiddleware::class]);
+Route::post('/customerDelete',[customerController::class,'customerDelete'])->middleware([TokenVerificationMiddleware::class]);
+Route::post('/customerById',[customerController::class,'customerById'])->middleware([TokenVerificationMiddleware::class]);
