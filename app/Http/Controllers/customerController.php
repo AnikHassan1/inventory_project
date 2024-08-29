@@ -28,23 +28,23 @@ class customerController extends Controller
     function customerDelete(Request $request){
         $customer_id = $request->input('id');
         $user_id = $request->header('id');
-        return customer::where('id',$customer_id)->where('id',$user_id)->delete();
+        return customer::where('id',$customer_id)->where('user_id',$user_id)
+          ->delete();
     }
 
     function customerById(Request $request){
         $customer_id = $request->input('id');
         $user_id = $request->header('id');
-        return customer::where('id',$customer_id)->where('id',$user_id)->first();
+         return customer::where('id','=',$customer_id)->where('user_id','=',$user_id)->first();
     }
 
     function customerupdate(Request $request){
         $customer_id = $request->input('id');
         $user_id = $request->header('id');
-        return customer::where('id',$customer_id)->where('id',$user_id)->update([
+        return customer::where('id',$customer_id)->where('user_id',$user_id)->update([
             'name'=>$request->input('name'),
             'email'=>$request->input('email'),
             'mobile'=>$request->input('mobile')
         ]);
     }
-
 }

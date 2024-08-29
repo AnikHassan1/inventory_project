@@ -38,6 +38,7 @@ Route::get('/ProfilePage',[UserController::class,'ProfilePage'])->middleware([To
 
 // pages Route
 Route::get('/categoryPage',[categoriesController::class,'CategoriesPage'])->middleware([TokenVerificationMiddleware::class]);
+Route::post('/categoriesID',[categoriesController::class,'categoriesID'])->middleware([TokenVerificationMiddleware::class]);
 Route::get('/categoryList',[categoriesController::class,'categoriesList'])->middleware([TokenVerificationMiddleware::class]);
 Route::post('/categoriesCreate',[categoriesController::class,'categoriesCreate'])->middleware([TokenVerificationMiddleware::class]);
 Route::post('/categoriesUpdate',[categoriesController::class,'categoriesUpdate'])->middleware([TokenVerificationMiddleware::class]);

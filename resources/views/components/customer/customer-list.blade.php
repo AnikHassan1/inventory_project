@@ -51,7 +51,7 @@ async function getList() {
                     <td>${index+1}</td>
                     <td>${item['name']}</td>
                     <td>${item['email']}</td>
-                    <td>${item['password']}</td>
+                    <td>${item['mobile']}</td>
                     <td>
                         <button data-id="${item['id']}" class="btn editBtn btn-sm btn-outline-success">Edit</button>
                         <button data-id="${item['id']}" class="btn deleteBtn btn-sm btn-outline-danger">Delete</button>

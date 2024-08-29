@@ -60,18 +60,19 @@ async function getList() {
         tableList.append(row)
     })
 
-    // $('.editBtn').on('click', async function () {
-    //        let id= $(this).data('id');
-    //        await FillUpUpdateForm(id)
-    //        $("#update-modal").modal('show');
+    $('.editBtn').on('click', async function () {
+           let id= $(this).data('id');
+           await FillUpUpdateForm(id)
+           $("#update-modal").modal('show');
 
 
+    });
+
+    // $('.editBtn').on('click',async function(){
+    //    let id = $(this).data('id');
+    //    await FillUpUpdateForm(id)
+    //    $("#update-modal").modal('show');
     // })
-
-    $('.editBtn').on('click',function(){
-       let id = $(this).data('id');
-       alert(id);
-    })
 
     $('.deleteBtn').on('click',function () {
         let id= $(this).data('id');
