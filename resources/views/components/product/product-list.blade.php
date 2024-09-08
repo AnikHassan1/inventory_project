@@ -39,7 +39,7 @@ async function getList() {
 
 
     showLoader();
-    let res=await axios.get("/list-product");
+    let res=await axios.get("/productsList");
     hideLoader();
 
     let tableList=$("#tableList");
@@ -50,13 +50,13 @@ async function getList() {
 
     res.data.forEach(function (item,index) {
         let row=`<tr>
-                    <td><img class="w-15 h-auto" alt="" src="${item['img_url']}"></td>
+                    <td><img class="w-15 h-auto" alt="" src="${item['img']}"></td>
                     <td>${item['name']}</td>
                     <td>${item['price']}</td>
                     <td>${item['unit']}</td>
                     <td>
-                        <button data-path="${item['img_url']}" data-id="${item['id']}" class="btn editBtn btn-sm btn-outline-success">Edit</button>
-                        <button data-path="${item['img_url']}" data-id="${item['id']}" class="btn deleteBtn btn-sm btn-outline-danger">Delete</button>
+                        <button data-path="${item['img']}" data-id="${item['id']}" class="btn editBtn btn-sm btn-outline-success">Edit</button>
+                        <button data-path="${item['img']}" data-id="${item['id']}" class="btn deleteBtn btn-sm btn-outline-danger">Delete</button>
                     </td>
                  </tr>`
         tableList.append(row)

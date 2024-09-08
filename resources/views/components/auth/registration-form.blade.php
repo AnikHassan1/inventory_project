@@ -29,9 +29,11 @@
                             </div>
                         </div>
                         <div class="row m-0 p-0">
-                            <div class="col-md-4 p-2">
-                                <button onclick="onRegistration()" class="btn mt-3 w-100  bg-gradient-primary">Complete</button>
+                            <div class="d-flex p-2 justify-content-between gap-5">
+                                <button onclick="onRegistration()" class="btn mt-3 w-50  bg-gradient-primary">Complete</button>
+                                <a href="{{ url('userlogin') }}"type="button" class="btn mt-3 w-50 btn btn-secondary btn-lg">Sign In</a>
                             </div>
+
                         </div>
                     </div>
                 </div>

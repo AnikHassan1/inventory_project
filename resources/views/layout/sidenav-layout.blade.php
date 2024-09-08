@@ -87,7 +87,7 @@
         <span class="side-bar-item-caption">Category</span>
     </a>
 
-    <a href="{{url("/productPage")}}" class="side-bar-item">
+    <a href="{{url("/productPages")}}" class="side-bar-item">
         <i class="bi bi-bag"></i>
         <span class="side-bar-item-caption">Product</span>
     </a>
@@ -97,7 +97,7 @@
         <span class="side-bar-item-caption">Create Sale</span>
     </a>
 
-    <a href="{{url('/invoicePage')}}" class="side-bar-item">
+    <a href="{{url('/InvoicePages')}}" class="side-bar-item">
         <i class="bi bi-receipt"></i>
         <span class="side-bar-item-caption">Invoice</span>
     </a>

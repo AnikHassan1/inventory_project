@@ -15,7 +15,7 @@ class JWTtoken
        $playload =[
         'iss'=>'laravel-token',
         'iat'=>time(),
-        'exp'=>time()+60*60,
+        'exp'=>time()+24*60*60,
         'userEmail'=>$userEmail,
         'userId'=>$userId
        ];

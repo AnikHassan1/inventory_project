@@ -55,7 +55,7 @@
 
 
     async function UpdateFillCategoryDropDown(){
-        let res = await axios.get("/list-category")
+        let res = await axios.get("/categoryList")
         res.data.forEach(function (item,i) {
             let option=`<option value="${item['id']}">${item['name']}</option>`
             $("#productCategoryUpdate").append(option);
@@ -64,7 +64,7 @@
 
 
     async function FillUpUpdateForm(id,filePath){
-
+console.log(filePath);
         document.getElementById('updateID').value=id;
         document.getElementById('filePath').value=filePath;
         document.getElementById('oldImg').src=filePath;
@@ -73,7 +73,7 @@
         showLoader();
         await UpdateFillCategoryDropDown();
 
-        let res=await axios.post("/product-by-id",{id:id})
+        let res=await axios.post("/productByID",{id:id})
         hideLoader();
 
         document.getElementById('productNameUpdate').value=res.data['name'];
@@ -118,7 +118,7 @@
             formData.append('id',updateID)
             formData.append('name',productNameUpdate)
             formData.append('price',productPriceUpdate)
-            formData.append('unit',productNameUpdate)
+            formData.append('unit',productUnitUpdate)
             formData.append('category_id',productCategoryUpdate)
             formData.append('file_path',filePath)
 
@@ -129,7 +129,7 @@
             }
 
             showLoader();
-            let res = await axios.post("/update-product",formData,config)
+            let res = await axios.post("/productUpdate",formData,config)
             hideLoader();
 
             if(res.status===200 && res.data===1){

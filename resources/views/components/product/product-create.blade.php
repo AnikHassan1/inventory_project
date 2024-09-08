@@ -5,7 +5,7 @@
                     <h5 class="modal-title" id="exampleModalLabel">Create Product</h5>
                 </div>
                 <div class="modal-body">
-                    <form id="save-form">
+                <form id="save-form">
                     <div class="container">
                         <div class="row">
                             <div class="col-12 p-1">
@@ -52,7 +52,7 @@
     FillCategoryDropDown();
 
     async function FillCategoryDropDown(){
-        let res = await axios.get("/list-category")
+        let res = await axios.get("/categoryList")
         res.data.forEach(function (item,i) {
             let option=`<option value="${item['id']}">${item['name']}</option>`
             $("#productCategory").append(option);
@@ -102,13 +102,15 @@
             }
 
             showLoader();
-            let res = await axios.post("/create-product",formData,config)
+            let res = await axios.post("/productCreate",formData,config)
             hideLoader();
 
             if(res.status===201){
                 successToast('Request completed');
                 document.getElementById("save-form").reset();
+                document.getElementById('newImg').src="{{asset('images/default.jpg')}}";
                 await getList();
+                
             }
             else{
                 errorToast("Request fail !")
