@@ -35,15 +35,15 @@
 
 <script>
 
-getList();
+//getList();
 
 
 async function getList() {
 
 
-   // showLoader();
-    let res=await axios.get("/invoice-select");
-    //hideLoader();
+    showLoader();
+    let res=await axios.get("/Invoice-Select");
+    hideLoader();
 
     let tableList=$("#tableList");
     let tableData=$("#tableData");
@@ -71,7 +71,9 @@ async function getList() {
     $('.viewBtn').on('click', async function () {
         let id= $(this).data('id');
         let cus= $(this).data('cus');
-        await InvoiceDetails(cus,id)
+        //$('#details-modal').modal('show');
+        await InvoiceDetails(cus,id);
+       
     })
 
     $('.deleteBtn').on('click',function () {

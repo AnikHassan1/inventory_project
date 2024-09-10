@@ -72,37 +72,37 @@
 
 <div id="sideNavRef" class="side-nav-open">
 
-    <a href="{{url("/dashboard")}}" class="side-bar-item">
+    <a href="{{url('/dashboard')}}" class="side-bar-item">
         <i class="bi bi-graph-up"></i>
         <span class="side-bar-item-caption">Dashboard</span>
     </a>
 
-    <a href="{{url("/customerPages")}}" class="side-bar-item">
+    <a href="{{url('/customerPages')}}" class="side-bar-item">
         <i class="bi bi-people"></i>
         <span class="side-bar-item-caption">Customer</span>
     </a>
 
-    <a href="{{url("/categoryPage")}}" class="side-bar-item">
+    <a href="{{url('/categoryPage')}}" class="side-bar-item">
         <i class="bi bi-list-nested"></i>
         <span class="side-bar-item-caption">Category</span>
     </a>
 
-    <a href="{{url("/productPages")}}" class="side-bar-item">
+    <a href="{{url('/productPages')}}" class="side-bar-item">
         <i class="bi bi-bag"></i>
         <span class="side-bar-item-caption">Product</span>
     </a>
 
-    <a href="{{url('/salePage')}}" class="side-bar-item">
+    <a href="{{url('/Sales-Pages')}}" class="side-bar-item">
         <i class="bi bi-currency-dollar"></i>
         <span class="side-bar-item-caption">Create Sale</span>
     </a>
 
-    <a href="{{url('/InvoicePages')}}" class="side-bar-item">
+    <a href="{{url('/Invoice-Pages')}}" class="side-bar-item">
         <i class="bi bi-receipt"></i>
         <span class="side-bar-item-caption">Invoice</span>
     </a>
 
-    <a href="{{url('/reportPage')}}" class="side-bar-item">
+    <a href="{{url('/Report-Pages')}}" class="side-bar-item">
         <i class="bi bi-file-earmark-bar-graph"></i>
         <span class="side-bar-item-caption">Report</span>
     </a>

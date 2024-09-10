@@ -3,7 +3,7 @@
         <div class="modal-content">
             <div class="modal-body text-center">
                 <h3 class=" mt-3 text-warning">Delete !</h3>
-                <p class="mb-3">Once delete, you can't get it back.</p>
+                <p class="mb-3">Once delete, you can not get it back.</p>
                 <input class="d-none" id="deleteID"/>
             </div>
             <div class="modal-footer justify-content-end">
@@ -17,14 +17,17 @@
 </div>
 
 <script>
+    itemDelete();
      async  function  itemDelete(){
-            let id=document.getElementById('deleteID').value;
+            let Inv_id=document.getElementById('deleteID').value;
+           
             document.getElementById('delete-modal-close').click();
             showLoader();
-            let res=await axios.post("/invoice-delete",{inv_id:id})
+            let res=await axios.post("/Invoice-Delete",{Inv_id:Inv_id})
+          
             hideLoader();
             if(res.data===1){
-                successToast("Request completed")
+                successToast("Request completed");
                 await getList();
             }
             else{

@@ -27,6 +27,7 @@
         if(FormDate.length === 0 || ToDate.length === 0){
             errorToast("Date Range Required !")
         }else{
+            console.log(FormDate,ToDate);
             window.open('/sales-report/'+FormDate+'/'+ToDate);
         }
     }

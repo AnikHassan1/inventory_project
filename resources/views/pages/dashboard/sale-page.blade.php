@@ -151,7 +151,7 @@
                 let row=`<tr class="text-xs">
                         <td>${item['product_name']}</td>
                         <td>${item['qty']}</td>
-                        <td>${item['sale_price']}</td>
+                        <td>${item['sales_price']}</td>
                         <td><a data-index="${index}" class="btn remove text-xxs px-2 py-1  btn-sm m-0">Remove</a></td>
                      </tr>`
                 invoiceList.append(row)
@@ -184,7 +184,7 @@
             let discountPercentage=(parseFloat(document.getElementById('discountP').value));
 
             InvoiceItemList.forEach((item,index)=>{
-                Total=Total+parseFloat(item['sale_price'])
+                Total=Total+parseFloat(item['sales_price'])
             })
 
              if(discountPercentage===0){
@@ -225,7 +225,7 @@
                errorToast("Product Quantity Required");
            }
            else{
-               let item={product_name:PName,product_id:PId,qty:PQty,sale_price:PTotalPrice};
+               let item={product_name:PName,product_id:PId,qty:PQty,sales_price:PTotalPrice};
                InvoiceItemList.push(item);
                console.log(InvoiceItemList);
                $('#create-modal').modal('hide')
@@ -245,7 +245,7 @@
 
 
         async function CustomerList(){
-            let res=await axios.get("/list-customer");
+            let res=await axios.get("/customerList");
             let customerList=$("#customerList");
             let customerTable=$("#customerTable");
             customerTable.DataTable().destroy();
@@ -282,7 +282,7 @@
 
 
         async function ProductList(){
-            let res=await axios.get("/list-product");
+            let res=await axios.get("/productsList");
             let productList=$("#productList");
             let productTable=$("#productTable");
             productTable.DataTable().destroy();
@@ -317,9 +317,9 @@
 
       async  function createInvoice() {
             let total=document.getElementById('total').innerText;
-            let discount=document.getElementById('discount').innerText
-            let vat=document.getElementById('vat').innerText
-            let payable=document.getElementById('payable').innerText
+            let discount=document.getElementById('discount').innerText;
+            let vat=document.getElementById('vat').innerText;
+            let payable=document.getElementById('payable').innerText;
             let CId=document.getElementById('CId').innerText;
 
 
@@ -342,10 +342,10 @@
             else{
 
                 showLoader();
-                let res=await axios.post("/invoice-create",Data)
+                let res=await axios.post("/Invoice-Create",Data)
                 hideLoader();
                 if(res.data===1){
-                    window.location.href='/invoicePage'
+                    window.location.href='/Invoice-Pages'
                     successToast("Invoice Created");
                 }
                 else{
